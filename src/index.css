@@ -206,6 +206,11 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 1rem 0;
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+}
+
+.new .stat:last-child{
+  border-bottom: none;
 }
 
 .new .stat h3 {

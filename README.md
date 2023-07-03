@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/news-homepage-with-react-and-css-flexbox-NrLhudM5V1)
+- Live Site URL: [Vercel](https://news-homepage-ashen.vercel.app/)
 
 ## My process
 
