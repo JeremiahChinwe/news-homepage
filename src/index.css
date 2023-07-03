@@ -1,0 +1,349 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/* ----------------- General Styles ------------------ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  background-color: hsl(36, 100%, 99%);
+  color: black;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 15px;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: hsl(240, 100%, 5%);
+  font-size: 22px;
+  text-decoration: none;
+}
+
+header {
+  height: 82px;
+  width: 100%;
+  background-color: hsl(36, 100%, 99%);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+
+/* --------------- Utility Classes --------------------- */
+.menu_items {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 32px;
+}
+
+
+.menu-button,
+.menu_close {
+  display: none;
+}
+
+
+/* ------------ ------Menu Media Query ---------------------- */
+@media screen and (max-width: 640px) {
+  .menu-button {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu_items {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    background-color: white;
+    height: 100%;
+    right: -100%;
+    padding: 24px 30px 30px;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .menu_items ul li {
+    padding: 1rem 0;
+  }
+
+  .show_menu {
+    right: 0;
+  }
+
+  .hide_menu {
+    right: -100%;
+  }
+
+  .menu_close {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    margin-bottom: 2rem;
+  }
+
+  .page {
+    position: fixed;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transition: all 0.5s ease;
+    transition-delay: 0.1s;
+  }
+}
+
+
+/*  --------------- Main Section --------------------- */
+.main_section {
+  padding: 0 12px 16px 12px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero .details h1 {
+  color: hsl(240, 100%, 5%);
+  font-size: 2.30em;
+}
+
+.hero .web3_image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  ;
+}
+
+.hero .desktop_img {
+  display: none;
+}
+
+.hero .details div p {
+  margin: 1rem 0 2rem 0;
+  color: hsl(236, 13%, 42%);
+}
+
+.hero .details div a {
+  background-color: hsl(5, 85%, 63%);
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  color: hsl(36, 100%, 99%);
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+
+/* ----------------------- New Section ------------------------- */
+.new {
+  background-color: hsl(240, 100%, 5%);
+  margin: 3rem auto;
+  padding: 12px 19px;
+}
+
+.new h1 {
+  color: hsl(35, 77%, 62%);
+  font-size: 26px;
+  padding: 0.5rem 0;
+}
+
+.new .stat {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.new .stat h3 {
+  color: hsl(36, 100%, 99%);
+  margin-bottom: 0.5rem;
+  font-size: 19px;
+}
+
+.new .stat p {
+  color: hsl(233, 8%, 79%);
+}
+
+
+/* ----------------- Trending Section ----------------------- */
+.trending {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 3rem auto;
+}
+
+.info {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.info img {
+  width: 30%;
+}
+
+.info div h2,
+.info div p {
+  color: hsl(236, 13%, 42%);
+}
+
+.info div h3 {
+  font-size: 16px;
+  color: hsl(240, 100%, 5%);
+}
+
+.info div h3:hover,
+.info div h3:focus {
+  color: hsl(5, 85%, 63%);
+}
+
+
+/* ---------------- Home Page Media Query ----------------- */
+@media screen and (min-width: 640px) {
+  header {
+    height: 120px;
+  }
+
+  .header_container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 16px;
+  }
+
+  .menu_items li a {
+    color: hsl(236, 13%, 42%);
+    font-size: 16px;
+  }
+
+  .container {
+    display: flex;
+    gap: 32px;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .hero .web3_image {
+    display: none;
+  }
+
+  .hero .desktop_img {
+    display: block;
+    width: 100%;
+  }
+
+  .hero .details {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero .details h1 {
+    display: flex;
+    width: 100%;
+    font-size: 2em;
+  }
+
+  .new {
+    margin: 0;
+  }
+
+  .trending {
+    flex-direction: row;
+    max-width: 1000px;
+  }
+
+  .info img {
+    width: 40%;
+  }
+}
+
+
+/* ------------- Footer Section -------------- */
+footer {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(233, 8%, 79%);
+  width: 100%;
+}
+
+footer .attribution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer .attribution p {
+  font-size: 12px;
+}
+
+footer .attribution p a {
+  font-weight: 500;
+  color: #646cff;
+  font-size: 11px;
+
+}
+
+footer a:hover {
+  color: #535bf2;
+  text-decoration: underline;
+}
