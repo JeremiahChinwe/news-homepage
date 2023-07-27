@@ -39,31 +39,48 @@ p {
   font-size: 15px;
 }
 
-ul li {
-  list-style: none;
-}
-
 a {
-  color: hsl(240, 100%, 5%);
-  font-size: 22px;
   text-decoration: none;
 }
 
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: -2rem;
+}
+
+nav ul li a {
+  color: hsl(240, 100%, 5%);
+  font-size: 22px;
+  display: block;
+  padding: 1rem 2rem;
+}
+
+nav ul li a:hover {
+  background-color: hsl(240, 100%, 5%);
+  color: white;
+}
+
 header {
-  height: 82px;
   width: 100%;
   background-color: hsl(36, 100%, 99%);
+  padding: 1.5rem;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 10;
+  box-shadow: 5px 5px 15px #666;
 }
 
 .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  height: 40px;
 }
 
 
@@ -71,8 +88,9 @@ header {
 .menu_items {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  gap: 32px;
+  margin: 0;
+  padding: 0;
+  gap: 22px;
 }
 
 
@@ -83,10 +101,16 @@ header {
 
 
 /* ------------ ------Menu Media Query ---------------------- */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 760px) {
   .menu-button {
     display: block;
     cursor: pointer;
+  }
+
+  nav ul li a:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    color: inherit;
   }
 
   .menu_items {
@@ -100,7 +124,9 @@ header {
     background-color: white;
     height: 100%;
     right: -100%;
-    padding: 24px 30px 30px;
+    padding: 24px 30px 30px 0;
+    gap: 0;
+    margin: 0;
     transition: all 0.5s ease;
     z-index: 1;
   }
@@ -139,7 +165,7 @@ header {
 
 /*  --------------- Main Section --------------------- */
 .main_section {
-  padding: 0 12px 16px 12px;
+  padding: 2rem 19px 16px;
   width: 100%;
   min-height: 100vh;
 }
@@ -156,7 +182,7 @@ header {
 
 .hero .details h1 {
   color: hsl(240, 100%, 5%);
-  font-size: 2.30em;
+  font-size: 2.5em;
 }
 
 .hero .web3_image {
@@ -172,19 +198,24 @@ header {
 }
 
 .hero .details div p {
-  margin: 1rem 0 2rem 0;
+  margin-bottom: 0.75rem;
   color: hsl(236, 13%, 42%);
+  font-size: 19px;
 }
 
 .hero .details div a {
   background-color: hsl(5, 85%, 63%);
   text-transform: uppercase;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2.5rem;
   color: hsl(36, 100%, 99%);
   font-size: 14px;
-  display: flex;
-  flex-wrap: wrap;
+  font-weight: bold;
+  display: block;
   width: fit-content;
+}
+
+.hero .details div a:hover {
+  background-color: hsl(240, 100%, 5%);
 }
 
 
@@ -255,19 +286,16 @@ header {
 .info div h3:hover,
 .info div h3:focus {
   color: hsl(5, 85%, 63%);
+  cursor: pointer;
 }
 
 
 /* ---------------- Home Page Media Query ----------------- */
-@media screen and (min-width: 640px) {
-  header {
-    height: 120px;
-  }
-
+@media screen and (min-width: 760px) {
   .header_container {
-    max-width: 1000px;
+    width: 80%;
     margin: 0 auto;
-    padding: 2rem 16px;
+    padding: 0 16px;
   }
 
   .menu_items li a {
@@ -276,12 +304,19 @@ header {
   }
 
   .container {
-    display: flex;
-    gap: 32px;
-    max-width: 1000px;
-    justify-content: center;
-    margin: 0 auto;
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    max-width: 80%;
+    margin: 1rem auto;
     padding: 0 16px;
+  }
+
+  .container .hero {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 
   .hero .web3_image {
@@ -296,13 +331,7 @@ header {
   .hero .details {
     display: flex;
     align-items: center;
-    gap: 32px;
-  }
-
-  .hero .details h1 {
-    display: flex;
-    width: 100%;
-    font-size: 2em;
+    gap: 19px;
   }
 
   .new {
@@ -311,11 +340,12 @@ header {
 
   .trending {
     flex-direction: row;
-    max-width: 1000px;
+    max-width: 80%;
+    margin: 6rem auto;
   }
 
   .info img {
-    width: 40%;
+    width: 60%;
   }
 }
 

@@ -10,7 +10,7 @@ export default function Home() {
         <main className="main_section">
             <section className="container">
 
-                <section className="hero">
+                <article className="hero">
                     <img src={mobileImg} alt="web 3" className="web3_image" />
                     <img src={desktopImg} alt="web 3" className="desktop_img" />
                     <div className="details">
@@ -22,9 +22,9 @@ export default function Home() {
                             <a href="">Read More</a>
                         </div>
                     </div>
-                </section>
+                </article>
 
-                <section className="new">
+                <article className="new">
                     <h1>New</h1>
 
                     <div className="stat">
@@ -41,36 +41,38 @@ export default function Home() {
                         <h3>Is VC Funding Drying Up?</h3>
                         <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
                     </div>
-                </section>
+                </article>
             </section>
 
             <section className="trending">
 
-                <div className="info">
+                <article className="info">
                     <img src={retroImg} alt="retro img" />
                     <div>
                         <h2>01</h2>
                         <h3>Reviving Retro PCs</h3>
                         <p>What happens when old PCs are given modern upgrades?</p>
                     </div>
-                </div>
+                </article>
 
-                <div className="info">
+                <article className="info">
                     <img src={laptopImg} alt="retro img" />
                     <div>
                         <h2>02</h2>
                         <h3>Top 10 Laptops of 2022</h3>
                         <p> Our best picks for various needs and budgets.</p>
                     </div>
-                </div>
-                <div className="info">
+                </article>
+
+                <article className="info">
                     <img src={gameImg} alt="retro img" />
                     <div>
                         <h2>03</h2>
                         <h3>The Growth of Gaming</h3>
                         <p>How the pandemic has sparked fresh opportunities.</p>
                     </div>
-                </div>
+                </article>
+                
             </section>
         </main>
     )

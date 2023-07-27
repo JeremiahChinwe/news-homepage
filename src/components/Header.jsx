@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import menuIcon from "../../assets/images/icon-menu.svg"
 import menuClose from "../../assets/images/icon-menu-close.svg"
+import logo from "../../assets/images/logo.svg"
 
 export default function Header() {
     const [open, setOpen] = useState(false)
@@ -23,8 +24,8 @@ export default function Header() {
 
     return (
         <header>
-            <section className="header_container">
-                <h1>W.</h1>
+            <div className="header_container">        
+                <img src={logo} alt="Capital letter W and a dot" />
                 <nav aria-label='Menu Nav'>
                     <ul className={`menu_items ${open ? "show_menu" : "hide_menu"}`}
                         ref={menuRef}>
@@ -55,7 +56,7 @@ export default function Header() {
                 <div className="menu-button" onClick={() => setOpen(!open)}>
                     <img src={menuIcon} alt="menu icon" />
                 </div>
-            </section>
+                </div>
         </header>
     )
 }
